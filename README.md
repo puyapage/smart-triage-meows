@@ -11,6 +11,3 @@ Sistem Smart Triage menggunakan Rule-Based MEOWS (Modified Early Obstetric Warni
 - **Moderate Risk**: skor 5–6
 - **High Risk**: skor ≥ 7 atau ada red trigger (parameter dengan skor 3)
 
-## Tim
-- AI Engineer: Rule-Based MEOWS Scoring Engine
-- Database: (isi nama temanmu)

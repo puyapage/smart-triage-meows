@@ -88,16 +88,12 @@ def score_heart_rate(hr):
 
 
 def score_consciousness(avpu):
-    """
-    Consciousness Rate (AVPU)
-    Nilai yang diterima: 'alert', 'voice', 'pain', 'unresponsive'
-    """
-    avpu = avpu.lower()
-    if avpu == "alert":
+    avpu = avpu.upper()
+    if avpu == 'A':
         return 0
-    elif avpu == "voice":
+    elif avpu == 'V':
         return 1
-    elif avpu in ("pain", "unresponsive"):
+    elif avpu in ('P', 'U'):
         return 3
     return 0
 
@@ -128,11 +124,11 @@ def calculate_meows_score(patient_data: dict) -> dict:
     has_red_trigger = any(s == 3 for s in scores.values())
 
     if has_red_trigger or total_score >= 7:
-        risk_level = "High Risk"
+        risk_level = "RED"
     elif 5 <= total_score <= 6:
-        risk_level = "Moderate Risk"
+        risk_level = "YELLOW"
     else:
-        risk_level = "Low Risk"
+        risk_level = "GREEN"
 
     return {
         "scores": scores,

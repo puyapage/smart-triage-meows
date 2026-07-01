@@ -15,7 +15,7 @@ def score_respiratory_rate(rr):
     if rr < 12 or rr > 25:
         return 3
     elif 21 <= rr <= 25:
-        return 1
+        return 2
     elif 12 <= rr <= 20:
         return 0
     return 0
@@ -34,14 +34,14 @@ def score_oxygen_saturation(spo2):
 
 def score_oxygen_supplementation(is_supplemented):
     """Oxygen Supplementation (True/False)"""
-    return 1 if is_supplemented else 0
+    return 2 if is_supplemented else 0
 
 
 def score_temperature(temp):
     """Temperature (°C)"""
-    if temp < 35 or temp > 37.7:
+    if temp < 36 or temp > 37.7:
         return 3
-    elif (35 <= temp <= 36) or (37.3 <= temp <= 37.7):
+    elif 37.3 <= temp <= 37.7:
         return 2
     elif 36.1 <= temp <= 37.2:
         return 0
@@ -54,9 +54,7 @@ def score_systolic_bp(sbp):
         return 3
     elif 151 <= sbp <= 160:
         return 2
-    elif (141 <= sbp <= 150) or (90 <= sbp <= 100):
-        return 1
-    elif 90 <= sbp <= 140:
+    elif 90 <= sbp <= 150:
         return 0
     return 0
 
